@@ -13,11 +13,6 @@
                     <section class="text-gray-600 body-font">
                         <div class="container px-5 mx-auto">
                           <x-flash-message status="session('status')" />
-                          <div class="lg:w-2/3 mx-auto">
-                          <div class="flex justify-end mb-4">
-                            <button onclick="location.href='{{ route('admin.owners.create') }}'" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">新規登録する</button>
-                          </div>
-                          </div>
                           <div class="lg:w-2/3 w-full mx-auto overflow-auto">
                             <table class="table-auto w-full text-left whitespace-no-wrap">
                               <thead>
@@ -36,7 +31,6 @@
                                   <td class="px-4 py-3">{{ $owner->deleted_at->diffForHumans() }}</td>
                                   <form id="delete_{{$owner->id}}" method="post" action="{{ route('admin.expired-owners.destroy', ['owner' => $owner->id]) }}">
                                     @csrf
-                                    @method('delete')
                                     <td class="px-4 py-3">
                                       <a href="#" data-id="{{$owner->id}}" onclick="deletePost(this)" class="text-white bg-red-400 border-0 py-2 px-4 focus:outline-none hover:bg-red-500 rounded">完全に削除</a>
                                     </td>
