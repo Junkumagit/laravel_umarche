@@ -13,15 +13,20 @@ class CreateShopsTable extends Migration
      */
     public function up()
     {
+        //if(!Schema::hasTable('shops')){
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('owner_id')->constrained();
+            $table->foreignId('owner_id')
+            ->constrained()
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->string('name');
             $table->text('information');
             $table->string('filename');
             $table->boolean('is_selling');
             $table->timestamps();
         });
+        //};
     }
 
     /**
