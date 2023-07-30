@@ -760,6 +760,10 @@ select{
   margin-left: auto;
   margin-right: auto;
 }
+.my-2{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 .my-8{
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -830,14 +834,14 @@ select{
 .mb-2{
   margin-bottom: 0.5rem;
 }
+.ml-auto{
+  margin-left: auto;
+}
 .mb-12{
   margin-bottom: 3rem;
 }
 .mr-3{
   margin-right: 0.75rem;
-}
-.ml-auto{
-  margin-left: auto;
 }
 .mb-1{
   margin-bottom: 0.25rem;
